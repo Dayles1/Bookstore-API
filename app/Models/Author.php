@@ -7,4 +7,9 @@ use Illuminate\Database\Eloquent\Model;
 class Author extends Model
 {
     protected $fillable = ['name', 'bio'];
+
+    public function posts()
+    {
+        return $this->hasMany(Book::class);
+    }
 }
